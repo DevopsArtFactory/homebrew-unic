@@ -6,7 +6,7 @@ class Unic < Formula
   sha256 "e2c4fc700c7ebb6aa737ef7c38b0b019de43a96bf08ca338aef03c60e4018364"
 
   def install
-    bin.install "unic-darwin-arm64" => "unic"
+    bin.install "unic-darwin-amd64" => "unic"
   end
 
   # test do
