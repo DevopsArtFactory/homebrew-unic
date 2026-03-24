@@ -1,4 +1,3 @@
-require_relative "lib/custom_download_strategy"
 class Unic < Formula
   desc "Go-based TUI tool for browsing and managing AWS resources in the terminal"
   homepage "https://github.com/DevopsArtFactory/unic"
