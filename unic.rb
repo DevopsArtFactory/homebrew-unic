@@ -5,21 +5,21 @@
 class Unic < Formula
   desc "Go-based TUI tool for browsing and managing AWS resources in the terminal"
   homepage "https://github.com/DevopsArtFactory/unic"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.4/unic-darwin-amd64.tar.gz"
-      sha256 "6d6e8a9ed646dfcf8ad2673d5e4a371c809bb4279f6007a6b673a2a69f10055d"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.5/unic-darwin-amd64.tar.gz"
+      sha256 "a47bb5ee4b5aa5ce543d6aa97517d23f4d04f956693fc4a0d96785ccfc945a64"
 
       define_method(:install) do
         bin.install "unic"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.4/unic-darwin-arm64.tar.gz"
-      sha256 "a82d6e896a4d9535534d4a76d3c04b5b2c286b113496b3c7042ff27eb5d56704"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.5/unic-darwin-arm64.tar.gz"
+      sha256 "0d6d45fef52e33c31f8ea2b9055d5e21e2c5df082e5bba8769ab3972510f7490"
 
       define_method(:install) do
         bin.install "unic"
@@ -29,15 +29,15 @@ class Unic < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.4/unic-linux-amd64.tar.gz"
-      sha256 "0bf1c6ad75f32df3971111672a20142d15053be66bcdc442c69ef11c1eedd535"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.5/unic-linux-amd64.tar.gz"
+      sha256 "2c3f08bed81df22fee85c10fc46ffe22c7ed3180b1a3d4b5262d60ed9c7b8dbd"
       define_method(:install) do
         bin.install "unic"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.4/unic-linux-arm64.tar.gz"
-      sha256 "e9ea496590e011743f82787da50edcceecdd8ac6947970d89cde383437adba87"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.1.5/unic-linux-arm64.tar.gz"
+      sha256 "396ab6137c3a38fd6ae82b7395aa1214a8371b8119ddd5b96f6fcaa075d195f7"
       define_method(:install) do
         bin.install "unic"
       end
