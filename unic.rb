@@ -5,46 +5,47 @@
 class Unic < Formula
   desc "Go-based TUI tool for browsing and managing AWS resources in the terminal"
   homepage "https://github.com/DevopsArtFactory/unic"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.1/unic-darwin-amd64.tar.gz"
-      sha256 "9680d3180888c915fdd8e2ff878d406de2766f53faa8670f69cb6957dd57b7fb"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.2/unic-darwin-amd64.tar.gz"
+      sha256 "caa3df006779718e4d9c9c4375d5bc3136bb37f660be76cd9614bba0b28f935a"
 
       define_method(:install) do
-        bin.install "unic"
+        bin.install "unic", "unic-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.1/unic-darwin-arm64.tar.gz"
-      sha256 "f086af5d54f8283c6999cd012f7f8472f57175f35a7d922859ae4230bd483a42"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.2/unic-darwin-arm64.tar.gz"
+      sha256 "cd667732265ba759ec09370e02b7c7fc12d2ee1ed307d8cd789a8eca58e441e5"
 
       define_method(:install) do
-        bin.install "unic"
+        bin.install "unic", "unic-mcp"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.1/unic-linux-amd64.tar.gz"
-      sha256 "8884faa62b88768a46822b0f11051af633508ddfa52cd344c941040ca12c3408"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.2/unic-linux-amd64.tar.gz"
+      sha256 "9bf66fec698679857626cb7eaed34ead17a757b374aa9f25993df78c8860f892"
       define_method(:install) do
-        bin.install "unic"
+        bin.install "unic", "unic-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.1/unic-linux-arm64.tar.gz"
-      sha256 "e854113acd7160090d76d2e8ec51d4341227935c753c3d242a9766fa6bf9e3be"
+      url "https://github.com/DevopsArtFactory/unic/releases/download/v0.3.2/unic-linux-arm64.tar.gz"
+      sha256 "fcc49db9eb84266202d19eafad42cdb41b90edb06ea4d28ebfc14608d18238a4"
       define_method(:install) do
-        bin.install "unic"
+        bin.install "unic", "unic-mcp"
       end
     end
   end
 
   test do
     system "#{bin}/unic", "--version"
+    assert_predicate bin/"unic-mcp", :executable?
   end
 end
